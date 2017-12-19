@@ -1,0 +1,20 @@
+<div class="language" id="js">
+  <i data-feather="smartphone"></i>
+  <pre>
+<code>const getMessages = async () => {
+  messages = await fetch('/messages').then(r => r.json())
+}</code>
+<code>
+const ws = new WebSocket('wss://app.socket.cool/md5(app)/channel/uid')
+ws.onmessage = getMessages</code></pre>
+  <i data-feather="server"></i>
+  <pre>
+<code>module.exports = (req, res) => {
+  const body = parse(req)
+  messages.push(body.message)</code>
+<code>
+  get('https://app.socket.cool/notify/app/channel')
+</code><code>
+  res.end(JSON.stringify(messages))
+}</code></pre>
+</div>

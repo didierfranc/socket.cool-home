@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>socket.cool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="import" href="languages/language-js.html" js>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <h1>socket.cool</h1>
+    <h2>You have a RESTful API ? you almost have a live API with WebSocket.</h2>
+    <p id="code"></p>
+    <a href="https://github.com/didierfranc/socket.cool-example/commit/9c2a5da9dcba7f65152e06265cd96e73668cd335" target="_blank">Real life example</a>
+    <script>
+      function main() {
+        var js = document.querySelector('link[js]')
+        var content = js.import.querySelector('div')
+        document.getElementById('code').appendChild(content)
+        feather.replace({ 'stroke-width': 1, width: 30, height: 30 })
+      }
+
+      if ('import' in document.createElement('link')) main()
+      else {
+        var e = document.createElement('script')
+        e.src = '/js/webcomponents-lite.js'
+        document.head.appendChild(e)
+
+        window.addEventListener('WebComponentsReady', main)
+      }
+    </script>
+  </body>
+</html>
